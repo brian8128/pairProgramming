@@ -88,6 +88,14 @@ def get_pairing_double_odd(r, a):
         return result
 
 
+def prettify(pairing):
+    s = set()
+    for pair in pairing:
+        if pair[0] < pair[1]:
+            s.add(pair)
+        else:
+            s.add((pair[1], pair[0]))
+    return sorted(list(s))
 
 
 class Pairer(object):
@@ -121,12 +129,12 @@ class Pairer(object):
 if __name__ == "__main__":
     n = int(raw_input("Enter the number of students (n) - must be even: "))
     day = int(raw_input("Enter the day number - must be between 1 and {0}. "
-                        "If you enter n you will get a pairing for each day: ").format(n))
+                        "If you enter n you will get a pairing for each day: ".format(n)))
     p = Pairer(n)
     if day == n:
         for i in range(1, n):
             print "Day {0}".format(i)
-            print p.get_pairing(i)
+            print prettify(p.get_pairing(i))
     else:
         print "Day {0}".format(day)
-        print p.get_pairing(day)
+        print prettify(p.get_pairing(day))
