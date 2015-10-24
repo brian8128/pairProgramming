@@ -1,5 +1,6 @@
-import itertools
+#!/usr/bin/python
 
+import itertools
 
 def f(k, b):
     """
@@ -53,7 +54,7 @@ def get_pairing_double_odd(r, a):
     if a % 2 == 1 or a % 4 == 0:
         raise ValueError("A MUST BE TWICE AN ODD NUMBER READ THE FUNCTION NAME NOT {0}".format(a))
     if r < 0 or r >= a:
-        raise ValueError("R MUST BE BETWEEN 0 AND {1}-1 NOT {0}".format(r, a))
+        raise ValueError("R MUST BE BETWEEN 0 AND {1} NOT {0}".format(r, a))
 
     # There are a-1 pairings.  For each r from 1 to a-1 we should get a different pairing.
 
@@ -113,13 +114,19 @@ class Pairer(object):
     def get_pairing(self, day):
         r, s = f(day, self.b)
         p1 = get_pairing_power_of_2(s, self.b)
-        print p1
         p2 = get_pairing_double_odd(r, self.a)
-        print p2
         return combine_pairings(p1, p2, self.a)
 
-n=12
-p = Pairer(n)
-for i in range(1, n):
-    print p.get_pairing(i)
-    print ''
+
+if __name__ == "__main__":
+    n = int(raw_input("Enter the number of students (n) - must be even: "))
+    day = int(raw_input("Enter the day number - must be between 1 and {0}. "
+                        "If you enter n you will get a pairing for each day: ").format(n))
+    p = Pairer(n)
+    if day == n:
+        for i in range(1, n):
+            print "Day {0}".format(i)
+            print p.get_pairing(i)
+    else:
+        print "Day {0}".format(day)
+        print p.get_pairing(day)
