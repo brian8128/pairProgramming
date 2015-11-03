@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import itertools
+import sys
 
 def f(k, b):
     """
@@ -127,14 +128,29 @@ class Pairer(object):
 
 
 if __name__ == "__main__":
-    n = int(raw_input("Enter the number of students (n) - must be even: "))
-    day = int(raw_input("Enter the day number - must be between 1 and {0}. "
-                        "If you enter n you will get a pairing for each day: ".format(n)))
-    p = Pairer(n)
-    if day == n:
-        for i in range(1, n):
-            print "Day {0}".format(i)
-            print prettify(p.get_pairing(i))
-    else:
-        print "Day {0}".format(day)
-        print prettify(p.get_pairing(day))
+    student = ["Jack",
+                "Kimyen",
+                "Hao",
+                "Kaleen",
+                "Eloisa",
+                "Maxwell",
+                "Brian",
+                "Lekha",
+                "Emily",
+                "Yihua",
+                "Nicole",
+                "Trevor",
+                "Jayson",
+                "Sharath",
+                "Ellen",
+                "Jeffrey",
+                "Dustin",
+                "Francis",
+                "Eric",
+                "Lori"
+                ]
+
+    p = Pairer(len(student))
+    pairing = prettify(p.get_pairing(int(sys.argv[1])))
+    for (a, b) in pairing:
+        print "{0}, {1}".format(student[a], student[b])
