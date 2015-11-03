@@ -151,6 +151,8 @@ if __name__ == "__main__":
                 ]
 
     p = Pairer(len(student))
-    pairing = prettify(p.get_pairing(int(sys.argv[1])))
+    day = int(sys.argv[1])
+    pairing = prettify(p.get_pairing(day))
+    print "Recommended partnerships - day {0} of {1}:".format(day, len(student)-1)
     for (a, b) in pairing:
         print "{0}, {1}".format(student[a], student[b])
