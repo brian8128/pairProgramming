@@ -1,6 +1,6 @@
 Usage: pairer.py {1-19}
 
-If a and b are two distinct students in cohort 2 then a and b are guaranteed to be paired together for exactly one i 1 <= i =< 19.  
+If a and b are two distinct students in cohort 2 then a and b are guaranteed to be paired together for exactly one i in the range 1 <= i =< 19.  
 
 Example: 
 
