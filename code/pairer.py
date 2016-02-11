@@ -128,26 +128,24 @@ class Pairer(object):
 
 
 if __name__ == "__main__":
-    student = ["Jack",
-                "Kimyen",
-                "Hao",
-                "Kaleen",
-                "Eloisa",
-                "Maxwell",
-                "Brian",
-                "Lekha",
-                "Emily",
-                "Yihua",
-                "Nicole",
-                "Trevor",
-                "Jayson",
-                "Sharath",
-                "Ellen",
-                "Jeff",
-                "Dustin",
-                "Francis",
+    student = ["Alexander",
+                "Bryan",
+                "Cindy",
+                "Crystal",
+                "Daniel G",
+                "Daniel T",
                 "Eric",
-                "Lori"
+                "Everett",
+                "Haizhen",
+                "John",
+                "Justin",
+                "Miles",
+                "Monika",
+                "Srikanth", 
+                "Swathi",
+                "Tetyana",
+                "Timothy",
+                "Yeongcheon"
                 ]
 
     p = Pairer(len(student))
